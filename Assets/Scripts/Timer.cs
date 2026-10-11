@@ -12,12 +12,11 @@ public class Timer : MonoBehaviour
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
-            timerText.text = "Time: " +
-                Mathf.CeilToInt(timeRemaining);
+            timerText.text = Mathf.CeilToInt(timeRemaining) + " Seconds";
         }
         else
         {
-            timerText.text = "Time: 0";
+            timerText.text = "0 Seconds";
             SceneManager.LoadScene(1);
         }
     }
