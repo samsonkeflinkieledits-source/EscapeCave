@@ -1,48 +1,83 @@
+
 using UnityEngine;
+
 
 public class Playermovement : MonoBehaviour
 {
+    [Header("Movement")]
+    public float moveSpeed = 5f;
 
-    [SerializeField] public float moveSpeed = 5f;
-    [SerializeField] public float jumpForce = 5f;
+    [Header("Jump")]
+    public float jumpForce = 5f;
+    public float gravity = -9.81f;
 
-    public Rigidbody rb;
+    [Header("Mouse Look")]
+    public Transform playerCamera;
+    public float mouseSensitivity = 2f;
+    public float maxLookAngle = 80f;
 
-    public bool isGrounded = true;
+    private float verticalRotation = 0f;
+    private float verticalVelocity = 0f;
+    private CharacterController controller;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-    
+        controller = GetComponent<CharacterController>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    private void Update()
+    void Update()
     {
-        // Get movement input
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveZ = Input.GetAxisRaw("Vertical");
+        MovePlayer();
+        LookAround();
+    }
 
-        // Move left, right, forward and backward
-        rb.linearVelocity = new Vector3(
-            moveX * moveSpeed,
-            rb.linearVelocity.y,
-            moveZ * moveSpeed
-        );
+    void MovePlayer()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
 
-        // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        Vector3 movement = transform.right * x + transform.forward * z;
+        movement = movement.normalized * moveSpeed;
+
+        if (controller.isGrounded)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            if (verticalVelocity < 0f)
+                verticalVelocity = -2f;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+                verticalVelocity = jumpForce;
+        }
+
+        verticalVelocity += gravity * Time.deltaTime;
+        movement.y = verticalVelocity;
+
+        controller.Move(movement * Time.deltaTime);
+    }
+
+    void LookAround()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+        transform.Rotate(Vector3.up * mouseX);
+
+        verticalRotation -= mouseY;
+        verticalRotation = Mathf.Clamp(
+            verticalRotation, -maxLookAngle, maxLookAngle);
+
+        if (playerCamera != null)
+        {
+            playerCamera.localRotation =
+                Quaternion.Euler(verticalRotation, 0f, 0f);
         }
     }
 
-     void OnCollisionStay(Collision collision)
+    void OnDisable()
     {
-        isGrounded = true;
-    }
-     void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
