@@ -570,8 +570,8 @@ Transform:
   m_GameObject: {fileID: 1160145808}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.7211, y: -205.1, z: 43.532}
-  m_LocalScale: {x: 2.6529, y: 2.6529, z: 2.6529}
+  m_LocalPosition: {x: 10.884, y: -206.26, z: 42.369}
+  m_LocalScale: {x: 8.468057, y: 8.468057, z: 8.468057}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
@@ -603,7 +603,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1160145814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,7 +916,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1a8ddd3635ce36d4b9106a8f4a7f5e96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -955,7 +955,7 @@ Transform:
   m_GameObject: {fileID: 1870874619}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.533195, y: -216, z: 157.78954}
+  m_LocalPosition: {x: -23.533195, y: -690, z: 157.78954}
   m_LocalScale: {x: 239.89, y: 239.89, z: 239.89}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1197,6 +1197,7 @@ GameObject:
   - component: {fileID: 3593978394189977822}
   - component: {fileID: 454788638976268155}
   - component: {fileID: 2426117015828734897}
+  - component: {fileID: 4227667161380749925}
   m_Layer: 0
   m_Name: Cave
   m_TagString: Untagged
@@ -1204,6 +1205,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &4227667161380749925
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227667161380749924}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4711208715938537054, guid: 0d79852fd195d3e4bb09e8755ee2b520, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
