@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class WaterDeath : MonoBehaviour
 {
 
-    public float scaleSpeed = 1f;
+    public float MoveSpeed = 1f;
 
     void Update()
     {
-        transform.localScale += new Vector3(0, scaleSpeed * Time.deltaTime, 0);
+        transform.position += new Vector3(0, MoveSpeed * Time.deltaTime, 0);
     }
 
     void OnCollisionEnter(Collision collision)
