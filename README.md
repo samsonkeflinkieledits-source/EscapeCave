@@ -5,3 +5,5 @@ Project Proposal link ---> https://docs.google.com/document/d/1cgVxvhcrBarRWZ2Oo
 
 Proposal Pitch Video --> https://www.youtube.com/watch?v=PPaMBdlobH0
 
+Progress Reflection --> https://docs.google.com/document/d/1D0TGUVDF7p9-0WOWuD6RfhsXshLRrOg_E0VPJCZU1uI/edit?tab=t.0
+
