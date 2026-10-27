@@ -20,4 +20,4 @@ Part 2: Illumination
 
 Part 3: Shaders
 
-Rim Lighting: This shader in our game creates a animated rim lighting by blending white a green along the objects edges using a lerp node. The rim effect is created by using the view direction and surface normal. I created a float called Rim Power that dictates the sharpness of the edges, while the base color remains unchanged.
+Rim Lighting: This shader in our game creates a animated rim lighting by blending white and green along the objects edges using a lerp node. The rim effect is created by using the view direction and surface normals. I created a float called Rim Power that dictates the sharpness of the edges, while the base color remains unchanged.
