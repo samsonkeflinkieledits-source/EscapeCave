@@ -9,7 +9,7 @@ Progress Reflection --> https://docs.google.com/document/d/1D0TGUVDF7p9-0WOWuD6R
 
 Project progression:
 
-Progress video:https://www.youtube.com/watch?v=xBWFWsgP2H4
+Progress video --> https://www.youtube.com/watch?v=xBWFWsgP2H4
 
 Part 1: Base game
 
