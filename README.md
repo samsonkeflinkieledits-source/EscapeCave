@@ -22,3 +22,6 @@ Part 3: Shaders
 Rim Lighting: This shader in our game creates a animated rim lighting by blending white and green along the objects edges using a lerp node. The rim effect is created by using the view direction and surface normals. I created a float called Rim Power that dictates the sharpness of the edges, while the base color remains unchanged.
 
 Luke- Vertex Water Shader: The vertex water shader consists of 2 parts. The first part consists of a scrolling textures that change the colour of the object over time. Lerping together 2 different colours and a sine wave to get the scrolling effect on the colour we wanted. The second part changes the position of the shader over time. This is done by gathering the x and z value to make the waves scroll diagonally. Then using 2 float variable to change the height of the wave and the speed of the wave. By getting the position of the world and the object the waves are able to tile together smoothly throughout the world space.
+
+Luke- Normal Mapping: To the specular shader I also added the normal mapping taught in class. The normal mapping will be super useful for us since the object doesn't need to have the same lighting properties for the main view direction and we can use a point light on the object to cell shade our objects.
+
